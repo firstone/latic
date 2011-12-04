@@ -1,0 +1,63 @@
+<project name="LATIC.Engine" default="dist">
+  
+  <property name="home_sfx" value="erissoft/latic/engine"/>
+  <property name="jarfile" value="latic_engine.jar"/>
+  <property name="applibdir" value="${basedir}/libsrc/erissoft/latic"/>
+  <property environment="env"/>
+  <import file="${env.PHOME}/java/make/lib.xml"/>
+
+  <patternset id="id.source">
+    <include name="${home_sfx}/AnimationExecutor.java"/>
+    <include name="${home_sfx}/AnimatorCondition.java"/>
+    <include name="${home_sfx}/AnimatorDoneCondition.java"/>
+    <include name="${home_sfx}/AnimatorInterface.java"/>
+    <include name="${home_sfx}/Color.java"/>
+    <include name="${home_sfx}/ColorCycle.java"/>
+    <include name="${home_sfx}/ColorCycleAnimator.java"/>
+    <include name="${home_sfx}/Condition.java"/>
+    <include name="${home_sfx}/E131.java"/>
+    <include name="${home_sfx}/E131Writer.java"/>
+    <include name="${home_sfx}/EndsLightIterator.java"/>
+    <include name="${home_sfx}/FadeInAnimator.java"/>
+    <include name="${home_sfx}/FadeOutAnimator.java"/>
+    <include name="${home_sfx}/ForwardLightIterator.java"/>
+    <include name="${home_sfx}/Light.java"/>
+    <include name="${home_sfx}/LightAnimator.java"/>
+    <include name="${home_sfx}/LightIterator.java"/>
+    <include name="${home_sfx}/LightString.java"/>
+    <include name="${home_sfx}/LightStringManager.java"/>
+    <include name="${home_sfx}/MidLightIterator.java"/>
+    <include name="${home_sfx}/MultiAnimator.java"/>
+    <include name="${home_sfx}/NativeWriter.java"/>
+    <include name="${home_sfx}/Rainbow.java"/>
+    <include name="${home_sfx}/RainbowAnimator.java"/>
+    <include name="${home_sfx}/ReverseLightIterator.java"/>
+    <include name="${home_sfx}/ReverseRainbow.java"/>
+    <include name="${home_sfx}/SleepAnimator.java"/>
+    <include name="${home_sfx}/StaticColorAnimator.java"/>
+    <include name="${home_sfx}/StepAnimator.java"/>
+    <include name="${home_sfx}/StringAnimator.java"/>
+    <include name="${home_sfx}/SyncAnimator.java"/>
+    <include name="${home_sfx}/TrackAnimator.java"/>
+    <include name="${home_sfx}/Writer.java"/>
+  </patternset>
+
+  <target name="proc_deps">
+    <ant antfile="${comlibdir}/base/build.xml" inheritall="false" target="${target_name}"/>
+  </target>
+  
+  <path id="id.cust.libs">
+    <fileset dir="${basedir}/lib">
+      <include name="base.jar"/>
+    </fileset>
+  </path>
+  
+</project>
+
+<!-- 
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->

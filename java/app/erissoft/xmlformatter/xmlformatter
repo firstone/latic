@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. $PHOME/script/set_environment.sh
+
+PLIBS=$PHOME/java/lib
+
+APPCLASSPATH=$CLASSPATH:$PLIBS/base.jar:$PLIBS/xml.jar:$PLIBS/xmlformatter.jar
+
+java -classpath $DEPCLASSPATH:$APPCLASSPATH erissoft.xmlformatter.xmlformatter $1

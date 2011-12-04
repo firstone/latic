@@ -1,0 +1,39 @@
+<project name="LATIC.App" default="dist">
+  
+  <property name="home_sfx" value="erissoft/latic/app"/>
+  <property name="jarfile" value="latic_app.jar"/>
+  <property name="applibdir" value="${basedir}/libsrc/erissoft/latic"/>
+  <property environment="env"/>
+  <import file="${env.PHOME}/java/make/lib.xml"/>
+
+  <patternset id="id.source">
+    <include name="${home_sfx}/ColorFadeAnimator.java"/>
+    <include name="${home_sfx}/CurveProfile.java"/>
+    <include name="${home_sfx}/FadeToColorAnimator.java"/>
+    <include name="${home_sfx}/FlipAnimator.java"/>
+    <include name="${home_sfx}/Profile.java"/>
+    <include name="${home_sfx}/ProfileAnimator.java"/>
+    <include name="${home_sfx}/TrailingRunningAnimator.java"/>
+  </patternset>
+
+  <target name="proc_deps">
+    <ant antfile="${comlibdir}/base/build.xml" inheritall="false" target="${target_name}"/>
+    <ant antfile="${applibdir}/engine/build.xml" inheritall="false" target="${target_name}"/>
+  </target>
+  
+  <path id="id.cust.libs">
+    <fileset dir="${basedir}/lib">
+      <include name="base.jar"/>
+      <include name="latic_engine.jar"/>
+    </fileset>
+  </path>
+  
+</project>
+
+<!-- 
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->

@@ -1,0 +1,30 @@
+<project name="Base" default="dist">
+  
+  <property name="home_sfx" value="com/erissoft/base"/>
+  <property name="jarfile" value="base.jar"/>
+  <property environment="env"/>
+  <import file="${env.PHOME}/java/make/lib.xml"/>
+
+  <patternset id="id.source">
+    <include name="${home_sfx}/Config.java"/>
+    <include name="${home_sfx}/ConfigReader.java"/>
+    <include name="${home_sfx}/ConfigValNotFoundException.java"/>
+    <include name="${home_sfx}/Convert.java"/>
+    <include name="${home_sfx}/ESException.java"/>
+    <include name="${home_sfx}/ResultWriter.java"/>
+    <include name="${home_sfx}/TextResultWriter.java"/>
+  </patternset>
+
+  <target name="proc_deps"/>
+  
+  <path id="id.cust.libs"/>
+  
+</project>
+
+<!-- 
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->

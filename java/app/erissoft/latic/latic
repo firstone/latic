@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. $PHOME/script/set_environment.sh
+
+PLIBS=$PHOME/java/lib
+
+APPCLASSPATH=$CLASSPATH:$PLIBS/base.jar:$PLIBS/xml.jar:$PLIBS/latic_app.jar:$PLIBS/latic_engine.jar:$PLIBS/latic.jar
+
+java -classpath $DEPCLASSPATH:$APPCLASSPATH erissoft.latic.latic $PHOME/java/cfg/latic.xml $1

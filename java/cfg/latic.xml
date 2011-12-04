@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.erissoft.com/letic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <app>
+        <delayed_start>
+            <enable>no</enable>
+            <start offset="720">SUNSET</start>
+            <location>
+                <latitude>30.111111</latitude>
+                <longitude>-70.222222</longitude>
+                <time_zone>America/New_York</time_zone>
+            </location>
+        </delayed_start>
+        <lights>
+            <max_brightness>0xCC</max_brightness>
+            <string name="high_roof" desc="High Roof" pin="5" count="50"/>
+            <string name="low_roof" desc="Low Roof" pin="6" count="50"/>
+            <string name="bush" desc="Round Bush" pin="7" count="50"/>
+            <string name="tree1" desc="Left Tree" pin="14" count="49"/>
+            <string name="tree2" desc="Middle Tree" pin="15" count="50"/>
+            <string name="tree3" desc="Right Tree" pin="16" count="50"/>
+            <string name="ground" desc="Ground Line" pin="17" count="50"/>
+            <string name="round_tree" desc="Round Tree" pin="18" count="49"/>
+            <string name="door" desc="Door Frame Line" pin="19" count="50"/>
+        </lights>
+        <writer>
+            <protocol>native</protocol>
+            <hostname>arduino1</hostname>
+            <port>9900</port>
+            <!-- delay between port writes in usec -->
+            <port_delay>920</port_delay>
+            <!-- overhead delay in usec -->
+            <send_delay>220</send_delay>
+            <byte_send_delay>12</byte_send_delay>
+        </writer>
+        <e131>
+            <sender_uuid>5aa1ded5-b6b7-4334-9f2a-27fdd24807fe</sender_uuid>
+            <source_name>LATIC</source_name>
+        </e131>
+        <profiles>
+            <profile name="ease_in">
+                <time_slice>10</time_slice>
+                <time_slice>8</time_slice>
+                <time_slice>7</time_slice>
+                <time_slice>6</time_slice>
+                <time_slice>5</time_slice>
+                <time_slice>4</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>3</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>2</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>1</time_slice>
+                <time_slice>5</time_slice>
+                <time_slice>6</time_slice>
+            </profile>
+        </profiles>
+    </app>
+    <engine>
+        <writer>
+            <arduino_type>ATmega328</arduino_type>
+            <arduino type="ATmega2560">
+              <port pin="0" number="5" port_pin="0"/>
+              <port pin="1" number="5" port_pin="1"/>
+              <port pin="2" number="5" port_pin="4"/>
+              <port pin="3" number="5" port_pin="5"/>
+              <port pin="4" number="7" port_pin="5"/>
+              <port pin="5" number="5" port_pin="3"/>
+              <port pin="6" number="8" port_pin="3"/>
+              <port pin="7" number="8" port_pin="4"/>
+              <port pin="8" number="8" port_pin="5"/>
+              <port pin="9" number="8" port_pin="6"/>
+              <port pin="10" number="2" port_pin="4"/>
+              <port pin="11" number="2" port_pin="5"/>
+              <port pin="12" number="2" port_pin="6"/>
+              <port pin="13" number="2" port_pin="7"/>
+              <port pin="14" number="10" port_pin="1"/>
+              <port pin="15" number="10" port_pin="0"/>
+              <port pin="16" number="8" port_pin="1"/>
+              <port pin="17" number="8" port_pin="0"/>
+              <port pin="18" number="4" port_pin="3"/>
+              <port pin="19" number="4" port_pin="2"/>
+              <port pin="20" number="4" port_pin="1"/>
+              <port pin="21" number="4" port_pin="0"/>
+              <port pin="22" number="1" port_pin="0"/>
+              <port pin="23" number="1" port_pin="1"/>
+              <port pin="24" number="1" port_pin="2"/>
+              <port pin="25" number="1" port_pin="3"/>
+              <port pin="26" number="1" port_pin="4"/>
+              <port pin="27" number="1" port_pin="5"/>
+              <port pin="28" number="1" port_pin="6"/>
+              <port pin="29" number="1" port_pin="7"/>
+              <port pin="30" number="3" port_pin="7"/>
+              <port pin="31" number="3" port_pin="6"/>
+              <port pin="32" number="3" port_pin="5"/>
+              <port pin="33" number="3" port_pin="4"/>
+              <port pin="34" number="3" port_pin="3"/>
+              <port pin="35" number="3" port_pin="2"/>
+              <port pin="36" number="3" port_pin="1"/>
+              <port pin="37" number="3" port_pin="0"/>
+              <port pin="38" number="4" port_pin="7"/>
+              <port pin="39" number="7" port_pin="2"/>
+              <port pin="40" number="7" port_pin="1"/>
+              <port pin="41" number="7" port_pin="0"/>
+              <port pin="42" number="12" port_pin="7"/>
+              <port pin="43" number="12" port_pin="6"/>
+              <port pin="44" number="12" port_pin="5"/>
+              <port pin="45" number="12" port_pin="4"/>
+              <port pin="46" number="12" port_pin="3"/>
+              <port pin="47" number="12" port_pin="2"/>
+              <port pin="48" number="12" port_pin="1"/>
+              <port pin="49" number="12" port_pin="0"/>
+              <port pin="50" number="2" port_pin="3"/>
+              <port pin="51" number="2" port_pin="2"/>
+              <port pin="52" number="2" port_pin="1"/>
+              <port pin="53" number="2" port_pin="0"/>
+              <port pin="54" number="6" port_pin="0"/>
+              <port pin="55" number="6" port_pin="1"/>
+              <port pin="56" number="6" port_pin="2"/>
+              <port pin="57" number="6" port_pin="3"/>
+              <port pin="58" number="6" port_pin="4"/>
+              <port pin="59" number="6" port_pin="5"/>
+              <port pin="60" number="6" port_pin="6"/>
+              <port pin="61" number="6" port_pin="7"/>
+              <port pin="62" number="11" port_pin="0"/>
+              <port pin="63" number="11" port_pin="1"/>
+              <port pin="64" number="11" port_pin="2"/>
+              <port pin="65" number="11" port_pin="3"/>
+              <port pin="66" number="11" port_pin="4"/>
+              <port pin="67" number="11" port_pin="5"/>
+              <port pin="68" number="11" port_pin="6"/>
+              <port pin="69" number="11" port_pin="7"/>
+            </arduino>
+            <arduino type="ATmega328">
+              <port pin="0" number="4" port_pin="0"/>
+              <port pin="1" number="4" port_pin="1"/>
+              <port pin="2" number="4" port_pin="2"/>
+              <port pin="3" number="4" port_pin="3"/>
+              <port pin="4" number="4" port_pin="4"/>
+              <port pin="5" number="4" port_pin="5"/>
+              <port pin="6" number="4" port_pin="6"/>
+              <port pin="7" number="4" port_pin="7"/>
+              <port pin="8" number="2" port_pin="0"/>
+              <port pin="9" number="2" port_pin="1"/>
+              <port pin="10" number="2" port_pin="2"/>
+              <port pin="11" number="2" port_pin="3"/>
+              <port pin="12" number="2" port_pin="4"/>
+              <port pin="13" number="2" port_pin="5"/>
+              <port pin="14" number="3" port_pin="0"/>
+              <port pin="15" number="3" port_pin="1"/>
+              <port pin="16" number="3" port_pin="2"/>
+              <port pin="17" number="3" port_pin="3"/>
+              <port pin="18" number="3" port_pin="4"/>
+              <port pin="19" number="3" port_pin="5"/>
+            </arduino>
+        </writer>
+        <queue/>
+        <loggers>
+            <!-- 
+    - each individual library or library group 
+    - can have its own output level set 
+    - in <subloggers/> section
+    -->
+            <subloggers>
+                <!-- application (non library) messages -->
+                <logger name="erissoft.app">
+                    <output_level>ALL</output_level>
+                </logger>
+                <!-- all libraries -->
+                <logger name="erissoft.lib"/>
+                <!-- common libraries -->
+                <logger name="erissoft.lib.com"/>
+                <!-- application specific libraries -->
+                <logger name="erissoft.lib.app"/>
+                <!-- individual library (example) -->
+                <logger name="erissoft.lib.com.base"/>
+                <logger name="erissoft.lib.app.engine">
+                    <output_level>INFO</output_level>
+                </logger>
+                <logger name="erissoft.lib.app.app">
+                    <output_level>INFO</output_level>
+                </logger>
+            </subloggers>
+            <output_level>ALL</output_level>
+            <!-- Log4J format string-->
+            <format_string>%d{yyyy-MM-dd HH:mm:ss} %-5p - %m at (%F:%L)%n</format_string>
+        </loggers>
+    </engine>
+</config>
+<!-- 
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->

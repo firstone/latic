@@ -1,0 +1,32 @@
+<project name="hamclient" default="dist">
+  
+  <property name="home_sfx" value="erissoft/xmlformatter"/>
+  <property name="jarfile" value="xmlformatter.jar"/>
+  <property name="has_depends" value="yes"/>
+  <property environment="env"/>
+  <import file="${env.PHOME}/java/make/app.xml"/>
+
+  <patternset id="id.source">
+    <include name="${home_sfx}/xmlformatter.java"/>
+  </patternset>
+  
+  <path id="id.cust.libs">
+    <fileset dir="${basedir}/lib">
+      <include name="base.jar"/>
+      <include name="xml.jar"/>
+    </fileset>
+  </path>
+
+  <target name="proc_deps">
+    <ant antfile="${comlibdir}/base/build.xml" inheritall="false" target="${target_name}"/>
+    <ant antfile="${comlibdir}/xml/build.xml" inheritall="false" target="${target_name}"/>
+  </target>
+</project>
+
+<!-- 
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->

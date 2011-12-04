@@ -1,0 +1,66 @@
+<project>
+  <property name="build" value="${full_home_sfx}/.workdir"/>
+  <property name="dist" value="lib"/>
+  <property name="comlibdir" value="${basedir}/libsrc/com/erissoft"/>
+  <property environment="env"/>
+  
+  <taskdef name="lib_verifier" classname="LibVerifier" classpath="/usr/local/ant/lib"/>
+
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${build}"/>
+  </target>
+  
+  <target name="compile" depends="init, build_deps, check_lib_deps, check_self_deps">
+    <echo message="Building ${build_message} ${ant.project.name}"/>
+    <javac srcdir="${src}" destdir="${build}" includeantruntime="false" debug="yes" deprecation="yes" sourcepath="">
+      <compilerarg value="-Xlint:unchecked"/>
+      <classpath refid="id.cust.libs"/>
+      <classpath>
+	<fileset dir="${env.PLIBDIR}/jlibs/log4j">
+	  <include name="log4j.jar"/>
+	</fileset>
+      </classpath>
+      <patternset refid="id.source"/>
+    </javac>
+  </target>
+  
+  <target name="check_lib_deps" if="has_depends">
+    <echo message="Checking dependencies for ${build_message} ${ant.project.name}"/>
+    <depend srcdir="${src}" destdir="${build}" cache="${build}">
+      <classpath refid="id.cust.libs"/>
+      <patternset refid="id.source"/>
+    </depend>
+  </target>
+  
+  <target name="check_self_deps" unless="has_depends">
+    <echo message="Checking self-dependencies for ${build_message} ${ant.project.name}"/>
+    <depend srcdir="${src}" destdir="${build}" cache="${build}">
+      <patternset refid="id.source"/>
+    </depend>
+  </target>
+  
+  <target name="build_deps">
+    <antcall target="proc_deps">
+      <param name="target_name" value="dist"/>
+    </antcall>
+  </target>
+  
+  <target name="dist" depends="compile">
+    <jar jarfile="${dist}/${jarfile}" basedir="${build}" excludes="*.txt"/>
+    <lib_verifier jarfile="${basedir}/${dist}/${jarfile}"/>
+  </target>
+  
+  <target name="clean">
+    <delete dir="${build}"/>
+    <delete file="${dist}/${jarfile}"/>
+  </target>
+</project>
+
+<!-- 
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->

@@ -1,0 +1,15 @@
+<project>
+  <property name="src" value="${basedir}/libsrc"/>
+  <property name="full_home_sfx" value="libsrc/${home_sfx}"/>
+  <property name="build_message" value="library"/>
+
+  <import file="./common.xml"/>
+</project>
+  
+<!-- 
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->

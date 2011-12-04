@@ -1,0 +1,23 @@
+<project>
+  <property name="src" value="${basedir}/app"/>
+  <property environment="env"/>
+  <property name="full_home_sfx" value="app/${home_sfx}"/>
+  <property name="build_message" value="project"/>
+
+  <import file="./common.xml"/>
+
+  <target name="cleanall">
+    <antcall target="proc_deps">
+      <param name="target_name" value="clean"/>
+    </antcall>
+    <antcall target="clean"/>
+  </target>
+</project>
+
+<!-- 
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->
